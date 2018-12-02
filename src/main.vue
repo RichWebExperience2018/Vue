@@ -24,7 +24,6 @@
 </template>
 
 <script>
-/* eslint-disable */
 let id = 0;
 function getId() {
   id += 1;
@@ -50,14 +49,14 @@ export default {
     }],
   }),
   methods: {
-    getTime: function() { return new Date().toLocaleString() },
-    onSelectTask: function(event, index) {
+    getTime: () => new Date().toLocaleString(),
+    onSelectTask: function onSelectTask(event, index) {
       this.tasks[index].isSelected = !this.tasks[index].isSelected;
     },
-    onSubmitTask: function(event, index) {
+    onSubmitTask: function onSubmitTask(event, index) {
       this.tasks[index].name = event.target.querySelector('input').value;
       this.tasks[index].isSelected = !this.tasks[index].isSelected;
-    }
+    },
   },
 };
 </script>
